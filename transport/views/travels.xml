@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="travels_tree_view_travel">
+            <field name="name">travels_tree_view_travel</field>
+            <field name="model">travels.transport</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="car_id"/>
+                    <field name="fuel_over"/>
+                    <field name="travel_time" string = "Travel time"/>
+                    <field name="relation_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="travels_form_view_travel">
+            <field name="name">travels_form_view_travel</field>
+            <field name="model">travels.transport</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="date"/>
+                                <field name="add"/>
+                                <field name="add_1"/>
+                            </group>
+                            <group>
+                                <field name="car_id"/>
+                                <field name="fuel_over"/>
+                                <field name="relation_id"/>
+                                <field name="travel_time" string = "Travel time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="tr_action2">
+            <field name="name">Travels</field>
+            <field name="res_model">travels.transport</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Travels" id="transport.menu_3_list" parent="transport.menu_1"
+                  action="tr_action2"/>
+
+
+    </data>
+</odoo>

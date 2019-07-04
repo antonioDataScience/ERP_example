@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="transport_tree_view">
+            <field name="name">transport_tree_view</field>
+            <field name="model">transporter.transport</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="model"/>
+                    <field name="type"/>
+                    <field name="year"/>
+                    <field name="fuel"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="transport_form_view">
+            <field name="name">transport_form_view</field>
+            <field name="model">transporter.transport</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="model"/>
+                                <field name="type"/>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="year"/>
+                                <field name="fuel"/>
+                                <field name="color"/>
+                                <field name="about"/>
+                            </group>
+                        </group>
+                        <field name="travels_ids"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="tr_action">
+            <field name="name">Transports</field>
+            <field name="res_model">transporter.transport</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Transport" id="transport.menu_root"/>
+
+        <menuitem name="Main Section" id="transport.menu_1" parent="transport.menu_root"/>
+
+        <menuitem name="Cars" id="transport.menu_1_list" parent="transport.menu_1"
+                  />
+
+
+    </data>
+</odoo>

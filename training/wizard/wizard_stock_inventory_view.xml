@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_training_report_wizard" model="ir.ui.view">
+        <field name="name">Training report wizards</field>
+        <field name="model">training.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Choose your data">
+                <group>
+                    <group>
+                        <field name="trainer_id"/>
+                    </group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                </group>
+
+                <footer>
+                    <button name="print_report" string="Print" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_wizard_trainig_list_report" model="ir.actions.act_window">
+        <field name="name">Training report</field>
+        <field name="res_model">training.report.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_training_report_wizard"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Reports" id="training.report" parent="training.menu_root" sequence="50"/>
+
+    <menuitem id="menu_action_wizard_training_list" action="action_wizard_trainig_list_report" parent="training.report"
+              sequence="5"/>
+
+
+</odoo>

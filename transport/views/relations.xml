@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="relations_tree_view_relation">
+            <field name="name">relations_tree_view_relation</field>
+            <field name="model">relations.transport</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="start_city"/>
+                    <field name="end_city"/>
+                    <field name="distance"/>
+                    <field name="time_travel"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="relations_form_view_relation">
+            <field name="name">relations_form_view_relation</field>
+            <field name="model">relations.transport</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="start_city"/>
+                                <field name="end_city"/>
+                            </group>
+                            <group>
+                                <field name="distance"/>
+                                <field name="time_travel"/>
+                            </group>s
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="tr_action1">
+            <field name="name">Relations</field>
+            <field name="res_model">relations.transport</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Relations" id="transport.menu_2_list" parent="transport.menu_1"
+                  action="tr_action1"/>
+
+
+    </data>
+</odoo>

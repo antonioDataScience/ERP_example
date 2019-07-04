@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_birthday">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="report.external_layout">
+                    <div class="oe_structure"/>
+                    <div class="container">
+                        <div class="page">
+                            <h2>
+                                <span t-field="o.name"/>
+                               <span t-field="o.month"/>
+                            </h2>
+                            <h1>BLASLDLA
+                            </h1>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Employee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.line_ids" t-as="t">
+                                        <td>
+                                            <span t-field="t.employee_id"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

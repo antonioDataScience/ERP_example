@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+
+        <record id="view_employee_form_birthday" model="ir.ui.view">
+            <field name="name">view_employee_form_birthday</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                    <field name="birthday" position="after">
+                        <field name="day" invisible="1"/>
+                        <field name="month" invisible="1"/>
+                    </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

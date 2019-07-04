@@ -1,0 +1,359 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* training
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-09 12:22+0000\n"
+"PO-Revision-Date: 2018-08-09 12:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_form_view
+msgid "Activate"
+msgstr "Aktiviraj"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_active
+msgid "Active"
+msgstr "Aktivan"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_adress
+msgid "Adress"
+msgstr "Adresa"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_student_age
+msgid "Age"
+msgstr "Starost"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_form_view_ONE
+msgid "All trainings"
+msgstr "Svi treninzi"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_form_view
+msgid "Cancel Training"
+msgstr "Otkaži trening"
+
+#. module: training
+#: selection:training.training,state:0
+msgid "Cancelled"
+msgstr "Cancelled"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_city
+msgid "City"
+msgstr "Grad"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_color
+msgid "Color"
+msgstr "Color"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_form_view
+msgid "Confirm"
+msgstr "Potvrdi"
+
+#. module: training
+#: selection:training.training,state:0
+msgid "Confirmed"
+msgstr "Confirmed"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_country
+msgid "Country"
+msgstr "Država"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_create_uid
+#: model:ir.model.fields,field_description:training.field_training_hall_create_uid
+#: model:ir.model.fields,field_description:training.field_training_student_create_uid
+#: model:ir.model.fields,field_description:training.field_training_training_create_uid
+msgid "Created by"
+msgstr "Kreirao"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_create_date
+#: model:ir.model.fields,field_description:training.field_training_hall_create_date
+#: model:ir.model.fields,field_description:training.field_training_student_create_date
+#: model:ir.model.fields,field_description:training.field_training_training_create_date
+msgid "Created on"
+msgstr "Datum kreiranja"
+
+#. module: training
+#: model:ir.model.fields,help:training.field_training_training_trainer_currency_symbol
+msgid "Currency sign, to be used when printing amounts."
+msgstr "Oznaka valute, koristi se prilikom ispisa iznosa."
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_description
+#: model:ir.model.fields,field_description:training.field_training_training_description
+#: model:ir.ui.view,arch_db:training.training_form_view
+#: model:ir.ui.view,arch_db:training.training_form_view_ONE
+msgid "Description"
+msgstr "Opis"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_display_name
+#: model:ir.model.fields,field_description:training.field_training_hall_display_name
+#: model:ir.model.fields,field_description:training.field_training_student_display_name
+#: model:ir.model.fields,field_description:training.field_training_training_display_name
+msgid "Display Name"
+msgstr "Naziv za prikaz"
+
+#. module: training
+#: selection:training.training,state:0
+msgid "Done"
+msgstr "Done"
+
+#. module: training
+#: selection:training.training,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_end_date
+msgid "End Date"
+msgstr "End Date"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_form_view
+msgid "Finish Training"
+msgstr "Finish Training"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_search_view
+msgid "Group By"
+msgstr "Grupiraj po"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_hall_ids
+msgid "Halls"
+msgstr "Halls"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_id
+#: model:ir.model.fields,field_description:training.field_training_hall_id
+#: model:ir.model.fields,field_description:training.field_training_student_id
+#: model:ir.model.fields,field_description:training.field_training_training_id
+msgid "ID"
+msgstr "ID"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training___last_update
+#: model:ir.model.fields,field_description:training.field_training_hall___last_update
+#: model:ir.model.fields,field_description:training.field_training_student___last_update
+#: model:ir.model.fields,field_description:training.field_training_training___last_update
+msgid "Last Modified on"
+msgstr "Zadnja promjena"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_write_uid
+#: model:ir.model.fields,field_description:training.field_training_hall_write_uid
+#: model:ir.model.fields,field_description:training.field_training_student_write_uid
+#: model:ir.model.fields,field_description:training.field_training_training_write_uid
+msgid "Last Updated by"
+msgstr "Promijenio"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_write_date
+#: model:ir.model.fields,field_description:training.field_training_hall_write_date
+#: model:ir.model.fields,field_description:training.field_training_student_write_date
+#: model:ir.model.fields,field_description:training.field_training_training_write_date
+msgid "Last Updated on"
+msgstr "Vrijeme promjene"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_length_days
+msgid "Length In Days"
+msgstr "Length In Days"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_location_id
+#: model:ir.ui.view,arch_db:training.training_search_view
+msgid "Location"
+msgstr "Location"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_form_view
+msgid "Location again"
+msgstr "Location again"
+
+#. module: training
+#: model:ir.ui.menu,name:training.menu_2_list
+msgid "Locations"
+msgstr "Locations"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_search_view
+msgid "Long Trainings (over 10 days)"
+msgstr "Long Trainings (over 10 days)"
+
+#. module: training
+#: model:ir.ui.menu,name:training.menu_1
+msgid "Main Section"
+msgstr "Main Section"
+
+#. module: training
+#: code:addons/training/models/training.py:43
+#, python-format
+msgid "Maximum price of 10000 excedeed!"
+msgstr "Maximum price of 10000 excedeed!"
+
+#. module: training
+#: code:addons/training/models/training.py:101
+#, python-format
+msgid "NaV"
+msgstr "NaV"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_name
+#: model:ir.model.fields,field_description:training.field_training_hall_name
+#: model:ir.model.fields,field_description:training.field_training_student_name
+#: model:ir.model.fields,field_description:training.field_training_training_name
+msgid "Name"
+msgstr "Naziv"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_number
+msgid "Number"
+msgstr "Number"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_form_view_ONE
+msgid "Practice"
+msgstr "Practice"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_location_training_addition
+msgid "Practice!"
+msgstr "Practice!"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_start_date
+#: model:ir.ui.view,arch_db:training.training_search_view
+msgid "Start Date"
+msgstr "Start Date"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_state
+msgid "State"
+msgstr "Stanje"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_search_view
+msgid "Status"
+msgstr "Status"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_student_ids
+#: model:ir.ui.view,arch_db:training.training_form_view
+msgid "Students"
+msgstr "Students"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_student_surname
+msgid "Surname"
+msgstr "Surname"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_form_view
+msgid "This will finish this training. Are you sure?"
+msgstr "This will finish this training. Are you sure?"
+
+#. module: training
+#: model:ir.ui.view,arch_db:training.training_search_view
+msgid "Today"
+msgstr "Today"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_total_amount
+msgid "Total Amount"
+msgstr "Total Amount"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_trainer_id
+msgid "Trainer"
+msgstr "Trainer"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_trainer_country_id
+msgid "Trainer Country"
+msgstr "Trainer Country"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_trainer_currency_symbol
+msgid "Trainer Currency Code"
+msgstr "Trainer Currency Code"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_trainer_currency_symbol_depends
+msgid "Trainer Currency Code Depends"
+msgstr "Trainer Currency Code Depends"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_student_training_id
+#: model:ir.ui.menu,name:training.menu_root
+msgid "Training"
+msgstr "Training"
+
+#. module: training
+#: sql_constraint:training.training:0
+msgid "Training Number must be unique!"
+msgstr "Training Number must be unique!"
+
+#. module: training
+#: model:ir.model.fields,field_description:training.field_training_training_price
+msgid "Training Price"
+msgstr "Training Price"
+
+#. module: training
+#: model:ir.actions.act_window,name:training.location_action
+msgid "Training location"
+msgstr "Training location"
+
+#. module: training
+#: model:ir.actions.act_window,name:training.training_action
+#: model:ir.model.fields,field_description:training.field_location_training_training_ids
+#: model:ir.ui.menu,name:training.menu_1_list
+#: model:ir.ui.view,arch_db:training.training_calendar_view
+#: model:ir.ui.view,arch_db:training.training_graph_view
+msgid "Trainings"
+msgstr "Trainings"
+
+#. module: training
+#: code:addons/training/models/training.py:114
+#, python-format
+msgid "You cannot delete training that are not canceled!"
+msgstr "You cannot delete training that are not canceled!"
+
+#. module: training
+#: model:ir.model,name:training.model_location_training
+msgid "location.training"
+msgstr "location.training"
+
+#. module: training
+#: model:ir.model,name:training.model_training_hall
+msgid "training.hall"
+msgstr "training.hall"
+
+#. module: training
+#: model:ir.model,name:training.model_training_student
+msgid "training.student"
+msgstr "training.student"
+
+#. module: training
+#: model:ir.model,name:training.model_training_training
+msgid "training.training"
+msgstr "training.training"

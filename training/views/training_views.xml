@@ -1,0 +1,184 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="training_tree_view">
+            <field name="name">training_tree_view</field>
+            <field name="model">training.training</field>
+            <field name="arch" type="xml">
+                <tree string="Trainings" decoration-info="state=='draft'" decoration-danger="state=='cancel'">
+                    <field name="name"/>
+                    <field name="trainer_id"/>
+                    <field name="price"/>
+                    <field name="start_date"/>
+                    <field name="length_days"/>
+                    <field name="state"/>
+                    <field name="total_amount"/>
+                    <field name="location_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="training_form_view">
+            <field name="name">training_form_view</field>
+            <field name="model">training.training</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button type="object" name="action_confirm" string="Confirm" states="draft"/>
+                        <button type="object" name="action_done" string="Finish Training" states="confirmed"
+                                confirm="This will finish this training. Are you sure?"/>
+                        <button type="object" name="action_cancel" string="Cancel Training" states="draft,confirmed"/>
+                        <button type="object" name="action_activate" string="Activate" states="cancel"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="number" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="price"/>
+                                <field name="create_date" readonly="True"/>
+                                <field name="hall_ids" widget="many2many_tags"/>
+                                <field name="total_amount"/>
+                            </group>
+                            <group>
+                                <field name="trainer_id" options="{'no_create': True}"
+                                       domain="[('job_category', '=', 'teacher')]"/>
+                                <field name="trainer_country_id"/>
+                                <field name="trainer_currency_symbol"/>
+                                <field name="trainer_currency_symbol_depends"/>
+                                <field name="start_date"/>
+                                <field name="length_days"/>
+                                <field name="end_date"/>
+                                <field name="location_id" string="Location again" widget="selection"/>
+                                <!-- <field name="id"/> -->
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                            <page string="Students">
+                                <field name="student_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="surname"/>
+                                        <field name="age"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="training_search_view">
+            <field name="name">training_search_view</field>
+            <field name="model">training.training</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="price"/>
+                    <field name="start_date"/>
+                    <field name="length_days"/>
+                    <separator/>
+                    <filter string="Today" name="today"
+                            domain="[('start_date', '=', context_today().strftime('%%Y-%%m-%%d'))]"/>
+                    <filter string="Long Trainings (over 10 days)" domain="[('length_days', '&gt;', 10)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Status" domain="[]" context="{'group_by': 'state'}"/>
+                        <filter string="Start Date" domain="[]" context="{'group_by': 'start_date'}"/>
+                        <filter string="Location" domain="[]" context="{'group_by': 'location_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="training_kanban_view">
+            <field name="name">training_kanban_view</field>
+            <field name="model">training.training</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                                <div t-if="widget.editable" class="o_project_kanban_colorpicker">
+                                    <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    <field name="name"/>
+                                    <br/>
+                                    <strong>
+                                        <field name="trainer_id"/>
+                                    </strong>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="training_graph_view" model="ir.ui.view">
+            <field name="name">training_graph_view</field>
+            <field name="model">training.training</field>
+            <field name="arch" type="xml">
+                <graph string="Trainings">
+                    <field name="trainer_id"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="training_calendar_view" model="ir.ui.view">
+            <field name="name">training_calendar_view</field>
+            <field name="model">training.training</field>
+            <field name="arch" type="xml">
+                <calendar color="color" date_start="start_date" string="Trainings" mode="month">
+                    <field name="name"/>
+                    <field name="trainer_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="training.training_action">
+            <field name="name">Trainings</field>
+            <field name="res_model">training.training</field>
+            <field name="view_mode">tree,kanban,graph,calendar,form</field>
+        </record>
+
+        <menuitem name="Training" id="training.menu_root"/>
+
+        <menuitem name="Main Section" id="training.menu_1" parent="training.menu_root"/>
+
+        <menuitem name="Trainings" id="training.menu_1_list" parent="training.menu_1"
+                  action="training.training_action"/>
+
+        <!--<menuitem name="Locations" id="training.menu_2_list" parent="training.menu_1"-->
+        <!--action="training.location_action"/>-->
+
+        <report
+                id="training_report"
+                model="training.training"
+                string="Training"
+                report_type="qweb-pdf"
+                name="training.report_training"
+                file="training.report_training"
+        />
+
+         <report
+                id="training_list_report"
+                model="training.report.wizard"
+                string="Training"
+                report_type="qweb-pdf"
+                name="training.report_training_list"
+                file="training.report_training_list"
+        />
+
+    </data>
+</odoo>

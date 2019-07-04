@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+
+
+        <record id="view_employee_form_add_job_categ" model="ir.ui.view">
+            <field name="name">view_employee_form_add_job_categ</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                    <field name="job_id" position="after">
+                        <field name="job_category"/>
+                    </field>
+                    <!-- position moze biti before, after, inside, replace, attributes -->
+                    <xpath expr="//notebook" position="inside">
+                        <!-- opcije koje postoje na attrs su invisible, readonly, required -->
+                        <page string="Trainings" attrs="{'invisible':[('job_category', '!=', 'teacher')]}">
+                            <group>
+                                <field name="training_ids" >
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="description"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </xpath>
+                    <field name="coach_id" position="attributes">
+                        <attribute name="attrs">{'readonly':[('job_category', '=', 'teacher')]}</attribute>
+                    </field>
+                    <field name="calendar_id" position="replace"/>
+            </field>
+        </record>
+
+
+        <record id="view_employee_tree_add_job_categ" model="ir.ui.view">
+            <field name="name">view_employee_tree_add_job_categ</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <field name="job_id" position="after">
+                    <field name="job_category"/>
+                </field>
+                </field>
+        </record>
+
+        <record id="hr_employee_view_search_add_job_categ" model="ir.ui.view">
+            <field name="name">hr.employee.search.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[4]" position="after">
+                    <filter name="job_category" string="Job Category" context="{'group_by':'job_category'}"/>
+                </xpath>
+            </field>
+        </record>
+
+
+
+
+
+    </data>
+</odoo>

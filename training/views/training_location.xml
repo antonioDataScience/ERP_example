@@ -1,0 +1,80 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="training_search_view_ONE">
+      <field name="name">training_search_view_ONE</field>
+      <field name="model">location.training</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="city"/>
+          <field name="country"/>
+          <field name="adress"/>
+          <field name = "description"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="training_form_view_ONE">
+      <field name="name">training_form_view_ONE</field>
+      <field name="model">location.training</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+           <group>
+              <group>
+                <field name="name"/>
+                <field name="city"/>
+              </group>
+              <group>
+                <field name="country"/>
+                <field name="adress"/>
+                <field name="active"/>
+              </group>
+           </group>
+           <notebook>
+               <page string="All trainings">
+                  <field name="training_ids"/>
+               </page>
+              <page string="Description">
+                 <field name="description"/>
+              </page>
+               <page string="Practice">
+                 <field name="addition"/>
+              </page>
+               <!--<page string="Adresa">-->
+                 <!--<field name="adresa"/>-->
+              <!--</page>-->
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="training_tree_view_ONE">
+      <field name="name">training_tree_view_ONE</field>
+      <field name="model">location.training</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="adress"/>
+          <field name="city"/>
+          <field name="country"/>
+          <field name = "description"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="training.location_action">
+      <field name="name">Training location</field>
+      <field name="res_model">location.training</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+      <menuitem name="Locations" id="training.menu_2_list" parent="training.menu_1"
+              action="training.location_action"/>
+
+  </data>
+</odoo>

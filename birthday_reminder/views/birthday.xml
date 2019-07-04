@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="birthday_report_action">
+            <field name="name">Birthdays</field>
+            <field name="res_model">employee.birthday</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="menu_hr_birthday_report"
+                name="Birthdays"
+                parent="hr.menu_hr_reporting_timesheet"
+                sequence="100"
+                action="birthday_report_action"/>
+
+        <record id="birthday_report_view" model="ir.ui.view">
+            <field name="name">birthday_report_view</field>
+            <field name="model">employee.birthday</field>
+            <field name="arch" type="xml">
+                <form string="Employee Birthday">
+                    <header>
+                        <button name="get_employee" string="Get Employees" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="month" required="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Employees">
+                                <field name="line_ids" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="employee_id"/>
+                                        <field name="age"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <report
+                id="birthday_report"
+                model="employee.birthday"
+                string="Birthdays"
+                report_type="qweb-pdf"
+                name="birthday_reminder.report_birthday"
+                file="birthday_reminder.report_birthday"
+        />
+
+
+    </data>
+</odoo>
