@@ -9,8 +9,8 @@
         Long description for training module for AKD
     """,
 
-    'author': "Uvid",
-    'website': "http://www.odoo.com.hr",
+    'author': "Antonio Tolic",
+    'website': "http://www.AKD.hr",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
